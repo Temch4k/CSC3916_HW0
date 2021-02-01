@@ -1,41 +1,41 @@
 --Request:
-User-Agent ñ PostmanRuntime/7.26.10 - this header is there because it lets the server identify what app, OS, vendor as well as the version of the requesting user agent is. In this case it means that Postman is making the request and what version it is.
+User-Agent ‚Äì PostmanRuntime/7.26.10 - this header is there because it lets the server identify what app, OS, vendor as well as the version of the requesting user agent is. In this case it means that Postman is making the request and what version it is.
 
-Accept ñ */* -  basically there to understand what we can accept and what we cannot accept. Everything? Only json? Only xml? Here it means we accept everything.
+Accept ‚Äì */* -  basically there to understand what we can accept and what we cannot accept. Everything? Only json? Only xml? Here it means we accept everything.
 
-Postman-Token ñ 62b8398a-212d-4349-9150-e90a89e79ced ñ It is there to pass a bug in Google Chrome where if you send the second request with the same exact parameters then chrome will return the same exact response to two of them.
+Postman-Token ‚Äì 62b8398a-212d-4349-9150-e90a89e79ced ‚Äì It is there to pass a bug in Google Chrome where if you send the second request with the same exact parameters then chrome will return the same exact response to two of them.
 
-Host ñ www.googleapis.com - host and port number of the server we are sending our request to. In our case it means we are trying to the send the request to the host googleapis.
+Host ‚Äì www.googleapis.com - host and port number of the server we are sending our request to. In our case it means we are trying to the send the request to the host googleapis.
 
-Accept-Encoding ñ gzip, deflate, br  - tells us how the data is encoded.
-Connection ñ keep-alive - tells the server if we will keep the connection open after we are done with our transaction or whatever we were doing. Here it means we are going to be able to accept encoded formats of gzip, deflate and br.
+Accept-Encoding ‚Äì gzip, deflate, br  - tells us how the data is encoded.
+Connection ‚Äì keep-alive - tells the server if we will keep the connection open after we are done with our transaction or whatever we were doing. Here it means we are going to be able to accept encoded formats of gzip, deflate and br.
 
 
 --Received:
-Content-Type ñ application/json; charset=UTF-8 ñ used to tell what kind of media type will be coming from the source. Here itís an application format using UTF-8.
+Content-Type ‚Äì application/json; charset=UTF-8 ‚Äì used to tell what kind of media type will be coming from the source. Here it‚Äôs an application format using UTF-8.
 
 Vary - these headeres are there to solve the problem of the old against new browsers, and helps our HTTP cache by telling it what parts of the request header to use whenever we are trying to find a new object. It does this by adding the names of the relevant headers such as in our case: Origin, X-Origin and the Referer.
-Vary ñ Origin ñ saves the origin of the request.
-Vary ñ X-Origin - 
-Vary ñ Referer - contains address of the page that is making the request.
+Vary ‚Äì Origin ‚Äì saves the origin of the request.
+Vary ‚Äì X-Origin
+Vary ‚Äì Referer - contains address of the page that is making the request.
 
-Content-Encoding ñ gzip ñ tells us what format it is encoded into. In our case we are going to receive context encoded in gzip.
+Content-Encoding ‚Äì gzip ‚Äì tells us what format it is encoded into. In our case we are going to receive context encoded in gzip.
 
-Date ñ Sun, 31 Jan 2021 16:53:02 GMT ñ tells us the date of the response.
+Date ‚Äì Sun, 31 Jan 2021 16:53:02 GMT ‚Äì tells us the date of the response.
 
-Server ñ ESF ñ the type of server we are going to be using for our transaction. Here we are going to be connecting to the ESF server.
+Server ‚Äì ESF ‚Äì the type of server we are going to be using for our transaction. Here we are going to be connecting to the ESF server.
 
-Cache-Control ñ private ñ tells us what to do with cache. Can I cache the response? Here it means that its for a single user and should not be cached into a shared cache.
+Cache-Control ‚Äì private ‚Äì tells us what to do with cache. Can I cache the response? Here it means that its for a single user and should not be cached into a shared cache.
 
-X-XSS-Protection ñ 0 ñ stops pages from loading if they detect reflected cross site scripting attack. This is for security. Here 0 means that XSS filtering is turned off
+X-XSS-Protection ‚Äì 0 ‚Äì stops pages from loading if they detect reflected cross site scripting attack. This is for security. Here 0 means that XSS filtering is turned off
 
-X-Frame-Options ñ SAMEORIGIN ñ used to indicate wheather browser should show a page in <frame>, <iframe>, <embed> or <object>. Here SAMEORIGIN means that the page can be displayed in a frame that is the same as the origin page we had.
+X-Frame-Options ‚Äì SAMEORIGIN ‚Äì used to indicate wheather browser should show a page in <frame>, <iframe>, <embed> or <object>. Here SAMEORIGIN means that the page can be displayed in a frame that is the same as the origin page we had.
 
-X-Content-Type-Options ñ nosniff ñ marker used by server to indicate that the in Comtent-Type header should be followed and not changed, this is for protection. Since we have a nosniff it means that it block the request destination of type ìstyleî and ìscriptî
+X-Content-Type-Options ‚Äì nosniff ‚Äì marker used by server to indicate that the in Comtent-Type header should be followed and not changed, this is for protection. Since we have a nosniff it means that it block the request destination of type ‚Äústyle‚Äù and ‚Äúscript‚Äù
 
-Alt-Svc ñ h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43" ñ these have the port number in our case port 443, then it also has maximum age, 
+Alt-Svc ‚Äì h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43" ‚Äì these have the port number in our case port 443, then it also has maximum age, 
 
-Transfer-Encoding ñ chunked ñ what has been used to encode the data of the payload data for it to be safe. Means that our encoding is going to be chunked.
+Transfer-Encoding ‚Äì chunked ‚Äì what has been used to encode the data of the payload data for it to be safe. Means that our encoding is going to be chunked.
 
 Used these two websites and the class lectures for definitions:  
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
