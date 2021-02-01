@@ -1,25 +1,41 @@
-User-Agent – PostmanRuntime/7.26.10 - this header is there because it lets the server identify what app, OS, vendor as well as the version of the requesting user agent is.
-Accept – */* -  basically there to understand what we can accept and what we cannot accept. Everything? Only json? Only xml?
-Postman-Token – 62b8398a-212d-4349-9150-e90a89e79ced – It is there to pass a bug in Google Chrome where if you send the second request with the same exact parameters then chrome will return the same exact response to two of them.
-Host – www.googleapis.com - host and port number of the server we are sending our request to.
-Accept-Encoding – gzip, deflate, br  - tells us how the data is encoded.
-Connection – keep-alive - tells the server if we will keep the connection open after we are done with our transaction or whatever we were doing.
+--Request:
+User-Agent – PostmanRuntime/7.26.10 - this header is there because it lets the server identify what app, OS, vendor as well as the version of the requesting user agent is. In this case it means that Postman is making the request and what version it is.
 
-Content-Type – application/json; charset=UTF-8 – used to tell what kind of media type will be coming from the source. Here its in application format using UTF-8.
+Accept – */* -  basically there to understand what we can accept and what we cannot accept. Everything? Only json? Only xml? Here it means we accept everything.
+
+Postman-Token – 62b8398a-212d-4349-9150-e90a89e79ced – It is there to pass a bug in Google Chrome where if you send the second request with the same exact parameters then chrome will return the same exact response to two of them.
+
+Host – www.googleapis.com - host and port number of the server we are sending our request to. In our case it means we are trying to the send the request to the host googleapis.
+
+Accept-Encoding – gzip, deflate, br  - tells us how the data is encoded.
+Connection – keep-alive - tells the server if we will keep the connection open after we are done with our transaction or whatever we were doing. Here it means we are going to be able to accept encoded formats of gzip, deflate and br.
+
+
+--Received:
+Content-Type – application/json; charset=UTF-8 – used to tell what kind of media type will be coming from the source. Here it’s an application format using UTF-8.
 
 Vary - these headeres are there to solve the problem of the old against new browsers, and helps our HTTP cache by telling it what parts of the request header to use whenever we are trying to find a new object. It does this by adding the names of the relevant headers such as in our case: Origin, X-Origin and the Referer.
 Vary – Origin – saves the origin of the request.
 Vary – X-Origin - 
 Vary – Referer - contains address of the page that is making the request.
-Content-Encoding – gzip – tells us what format it is encoded into.
+
+Content-Encoding – gzip – tells us what format it is encoded into. In our case we are going to receive context encoded in gzip.
+
 Date – Sun, 31 Jan 2021 16:53:02 GMT – tells us the date of the response.
-Server – ESF – the type of server we are going to be using for our transaction.
-Cache-Control – private – tells us what to do with cache. Can I cache the response?
-X-XSS-Protection – 0 – stops pages from loading if they detect reflected cross site scripting attack. This is for security.
-X-Frame-Options – SAMEORIGIN – used to indicate wheather browser should show a page in <frame>, <iframe>, <embed> or <object>.
-X-Content-Type-Options – nosniff – marker used by server to indicate that the in Comtent-Type header should be followed and not changed, this is for protection.
+
+Server – ESF – the type of server we are going to be using for our transaction. Here we are going to be connecting to the ESF server.
+
+Cache-Control – private – tells us what to do with cache. Can I cache the response? Here it means that its for a single user and should not be cached into a shared cache.
+
+X-XSS-Protection – 0 – stops pages from loading if they detect reflected cross site scripting attack. This is for security. Here 0 means that XSS filtering is turned off
+
+X-Frame-Options – SAMEORIGIN – used to indicate wheather browser should show a page in <frame>, <iframe>, <embed> or <object>. Here SAMEORIGIN means that the page can be displayed in a frame that is the same as the origin page we had.
+
+X-Content-Type-Options – nosniff – marker used by server to indicate that the in Comtent-Type header should be followed and not changed, this is for protection. Since we have a nosniff it means that it block the request destination of type “style” and “script”
+
 Alt-Svc – h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43" – these have the port number in our case port 443, then it also has maximum age, 
-Transfer-Encoding – chunked – what has been used to encode the data of the payload data for it to be safe.
+
+Transfer-Encoding – chunked – what has been used to encode the data of the payload data for it to be safe. Means that our encoding is going to be chunked.
 
 Used these two websites and the class lectures for definitions:  
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
